@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "scripture-search"
+version = "0.0.1"
+description = "A tool for searching scripture."
+authors = ["Anthony D'Achille <adachille15@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "scripture-search" }]
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/adachille/scripture-search"
+repository = "https://github.com/adachille/scripture-search"
+keywords = ["scripture", "search"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+notebook = "^7.2.0"
+pylint = "^3.2.7"
+pytest = "^8.3.2"
+coverage = "^7.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+"Homepage" = "https://github.com/adachille/scripture-search"
