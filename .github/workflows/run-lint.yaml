@@ -1,15 +1,13 @@
-name: Run Tests
+name: Pylint
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
-
+        python-version: [ "3.9", "3.10", "3.11", "3.12" ]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
@@ -20,7 +18,7 @@ jobs:
         run: |
           curl -sSL https://install.python-poetry.org | python3
           poetry install
-      - name: Test with pytest
+      - name: Run Pylint
         run: |
-          poetry run coverage run -m pytest tests
-          poetry run coverage report -m
+          poetry run pylint --fail-under=8 scripture_search/
+      - uses: psf/black@stable
