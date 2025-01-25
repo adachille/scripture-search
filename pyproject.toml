@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "A tool for searching scripture."
 authors = ["Anthony D'Achille <adachille15@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "scripture-search" }]
+packages = [{ include = "scripture_search" }]
 license = "GPL-3.0-or-later"
 homepage = "https://github.com/adachille/scripture-search"
 repository = "https://github.com/adachille/scripture-search"
@@ -19,6 +19,9 @@ notebook = "^7.2.0"
 pylint = "^3.2.7"
 pytest = "^8.3.2"
 coverage = "^7.6.1"
+
+[tool.coverage.report]
+omit = ["tests/*"]
 
 
 [build-system]
