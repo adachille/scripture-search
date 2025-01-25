@@ -17,5 +17,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     1. Changelog to track changes in the project.
     2. Pull Request template to guide contributors.
 3. GitHub Actions
-    1. Run tests action
-    2. Run lint action (pylint + black)
+    1. Code check action - runs pylint, black, and pytest (with coverage).
