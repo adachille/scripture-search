@@ -10,3 +10,4 @@
     - [ ] Documentation content changes
     - [ ] Other... (Please describe)
 - [ ] Changelog updated
+- [ ] Bumped version in `pyproject.toml`
