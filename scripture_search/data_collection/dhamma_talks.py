@@ -52,13 +52,13 @@ class DhammaTalksCollector(DataCollector):
         for index_page_url, sutta_page_links in tqdm(
             index_page_to_sutta_page_links.items()
         ):
-            collection = list(filter(lambda x: len(x) > 0, index_page_url.split("/")))[
-                -1
-            ]
-            self.logger.info("Processing collection: %s", collection)
+            sutta_collection = list(
+                filter(lambda x: len(x) > 0, index_page_url.split("/"))
+            )[-1]
+            self.logger.info("Processing sutta collection: %s", sutta_collection)
             for sutta_page_link in sutta_page_links:
                 try:
-                    sutta_text = self._get_sutta_text(sutta_page_link, collection)
+                    sutta_text = self._get_sutta_text(sutta_page_link, sutta_collection)
                     data.append(sutta_text)
                     sleep(0.25)
                 except Exception as e:
