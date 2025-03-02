@@ -1,8 +1,11 @@
+"""Configuration for the scripture search."""
+
 from dataclasses import dataclass, field
 from pathlib import Path
 
 # Get the project root directory
 PROJECT_ROOT = Path(__file__).parent.parent.absolute()
+
 
 @dataclass
 class Paths:
@@ -15,8 +18,10 @@ class Paths:
         """Create directories if they don't exist."""
         self.data_dir.mkdir(parents=True, exist_ok=True)
 
+
 @dataclass
 class Config:
     """Configuration for the scripture search."""
 
     paths: Paths = field(default_factory=Paths)
+    data_collector_timeout: int = 30

@@ -1,11 +1,11 @@
 """Module defining the DataCollector class."""
+
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
 from pathlib import Path
 
-from scripture_search.logger import get_logger
-
 import pandas as pd
+
+from scripture_search.logger import get_logger
 
 
 class DataCollector(ABC):
@@ -20,12 +20,15 @@ class DataCollector(ABC):
     def get_data(self, force_refresh: bool = False) -> pd.DataFrame:
         """Collect data from the website or load from file."""
         if self.save_location.exists() and not force_refresh:
-            self.logger.info(f"Loading data from {self.save_location}")
+            self.logger.info("Loading data from %s", self.save_location)
             return pd.read_csv(self.save_location)
 
-        self.logger.info(f"Data not found at {self.save_location} or force_refresh is True, collecting data...")
+        self.logger.info(
+            "Data not found at %s or force_refresh is True, collecting data...",
+            self.save_location,
+        )
         data = self._collect_data()
-        self.logger.info(f"Saving data to {self.save_location}")
+        self.logger.info("Saving data to %s", self.save_location)
         self.save_data(data)
         return data
 
@@ -37,5 +40,3 @@ class DataCollector(ABC):
     def _collect_data(self) -> pd.DataFrame:
         """Collect data from the website."""
         raise NotImplementedError("Subclasses must implement this method.")
-
-   
