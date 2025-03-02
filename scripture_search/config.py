@@ -9,7 +9,7 @@ class Paths:
     """Paths for the scripture search."""
 
     data_dir: Path = PROJECT_ROOT / "data"
-    suttas_data_file: Path = data_dir / "suttas.csv"
+    dhamma_talks_suttas_data_file: Path = data_dir / "dhamma_talks_suttas.csv"
 
     def __post_init__(self):
         """Create directories if they don't exist."""
