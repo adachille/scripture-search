@@ -19,7 +19,7 @@ jobs:
       - name: Install poetry and Python dependencies
         run: |
           curl -sSL https://install.python-poetry.org | python3
-          poetry install
+          poetry install --extras dev --extras test
       - name: Run Pylint
         run: |
           poetry run pylint --fail-under=8 scripture_search/

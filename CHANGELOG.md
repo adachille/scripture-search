@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.2] 2025-03-02 - Add Dhamma Talks data collection
+
+### Added
+
+1. Data collection
+    1. Added `data_collector.py` to define the API for data collectors and define shared functionality
+    2. Added `dhamma_talks.py` to scrape Dhamma Talks website for sutta references.
+    3. Added notebook `2025_03_02_Collect_Data_From_Dhamma_Talks.ipynb` to call the `dhamma_talks.py` data collection.
+2. General utility classes
+    1. Added `config.py` to hold config data
+    2. Added `logger.py` to hold useful, shared logging logic
+
+
+### Changed
+
+1. Project configuration
+    1. Updated dependencies to include beautifulsoup4 and pandas for web scraping.
+    2. Added data directory to .gitignore.
+
+
 ## [0.0.1] 2025-01-24 - Project Setup
 
 ### Added
